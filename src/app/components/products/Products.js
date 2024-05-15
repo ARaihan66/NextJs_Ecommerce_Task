@@ -4,14 +4,18 @@ import SearchOption from "./SearchOption";
 
 const Products = () => {
   return (
-    <div className="product_main">
-      <div className="">
-        <SearchOption />
-        <ProductsCard />
-      </div>
-      <div className="bg-rose-600">
-        <h1>CART</h1>
+    <div>
+      <div className="product_main">
+        <div>
+          <SearchOption />
+          <ProductsCard />
         </div>
+        <div className="bg-rose-600 p-3">
+          <h1 className="text-center bg-black text-white p-3 rounded">
+            SELECTED PRODUCTS
+          </h1>
+        </div>
+      </div>
     </div>
   );
 };
