@@ -5,9 +5,11 @@ import Image from "next/image";
 const Navbar = () => {
   return (
     <div className="flex items-center justify-between px-10 py-2 bg-black text-white">
-      <Link href="/" className="text-xl font-bold">
-        <Image src={Logo} alt="Logo" className="h-[60px] w-[100px]" />
-      </Link>
+      <div>
+        <Link href="/" className="text-xl font-bold">
+          <Image src={Logo} alt="Logo" className="h-[60px] w-[100px]" />
+        </Link>
+      </div>
       <div className="flex space-x-4">
         <Link
           href="/link1"
@@ -24,8 +26,8 @@ const Navbar = () => {
       </div>
       <div>
         <Link
-          href="/link2"
-          className="font-bold uppercase bg-blue-700 px-3 py-1 rounded-md"
+          href="/login"
+          className="font-semibold p-3 uppercase bg-blue-700 rounded-md"
         >
           Login
         </Link>
