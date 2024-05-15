@@ -1,3 +1,4 @@
+"use client"
 import Link from "next/link";
 import Logo from "../../../../public/logo.png";
 import Image from "next/image";

@@ -4,12 +4,14 @@ import SearchOption from "./SearchOption";
 
 const Products = () => {
   return (
-    <div className="flex justify-between">
-      <div className="flex-1">
+    <div className="product_main">
+      <div className="">
         <SearchOption />
         <ProductsCard />
       </div>
-      <div className="flex-1">CART</div>
+      <div className="bg-rose-600">
+        <h1>CART</h1>
+        </div>
     </div>
   );
 };
