@@ -13,13 +13,13 @@ const Navbar = () => {
       </div>
       <div className="flex space-x-4">
         <Link
-          href="/link1"
+          href="/"
           className="font-semibold uppercase px-3 py-1 rounded-md"
         >
           Products
         </Link>
         <Link
-          href="/link2"
+          href="/cart"
           className="font-semibold uppercase px-3 py-1 rounded-md"
         >
           Cart

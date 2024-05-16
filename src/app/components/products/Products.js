@@ -29,9 +29,14 @@ const Products = () => {
           <SearchOption />
           <ProductsCard changeDesign={changeDesign} />
         </div>
-        <div>
-          {" "}
-          <Cart />
+        <div >
+        <Cart>
+          <div className="flex justify-end mt-3">
+            <button className="uppercase font-semibold rounded-md bg-black text-white py-[5px] px-[10px] m-5">
+              checkout
+            </button>
+          </div>
+          </Cart>
         </div>
       </div>
     </div>
