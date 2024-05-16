@@ -6,38 +6,36 @@ import { RiDeleteBinLine } from "react-icons/ri";
 
 const Cart = () => {
   return (
-    <div className="sticky top-5 border-2 border-black p-3 my-6">
+    <div className="sticky top-5 border-2 border-black p-3 mt-20 mb-6 mr-16">
       <h1 className="text-center bg-black text-white p-3 rounded">
         SELECTED PRODUCTS
       </h1>
-      <div className="flex items-center bg-gray-100 border-2 rounded-xl mx-2 my-5 h-[200px]">
+      <div className="flex bg-gray-100 border-2 rounded-xl mx-2 my-5 h-[150px]">
         <div className="w-1/2 h-[100%]">
           <Image
             src={product}
             alt="image"
-            className="w-[100%] rounded-xl"
+            className="w-[100%] rounded-xl h-[100%]"
           />
         </div>
-        <div className="w-1/2">
-          <p className="m-5 font-semibold">
-            Wireless Bluetooth Headset Single Ear
-          </p>
-          <div className="flex justify-between items-center my-5 mx-5">
+        <div className="w-1/2 p-2">
+          <p className="text-xs mx-2">Wireless Bluetooth Headset Single Ear</p>
+          <div className="flex justify-between items-center my-1 mx-2">
             <div>
-            <div className="flex ">
-              <FaStar className="text-[#F6AA24]" />
-              <FaStar className="text-[#F6AA24]" />
-              <FaStar className="text-[#F6AA24]" />
-              <FaStar className="text-[#F6AA24]" />
-              <FaStar className="text-[#F6AA24]" />
+              <div className="flex text-sm">
+                <FaStar className="text-[#F6AA24]" />
+                <FaStar className="text-[#F6AA24]" />
+                <FaStar className="text-[#F6AA24]" />
+                <FaStar className="text-[#F6AA24]" />
+                <FaStar className="text-[#F6AA24]" />
+              </div>
+              <p className="text-[#ADB0B7] mt-1 text-sm">(121 reviews)</p>
             </div>
-            <p className="text-[#ADB0B7] mt-2">(121 reviews)</p>
-            </div>
-            <div>
-            <RiDeleteBinLine className="text-xl text-red-500 cursor-pointer"/>
+            <div className="mt-4">
+              <RiDeleteBinLine className="text-xl text-red-500 cursor-pointer mx-2" />
             </div>
           </div>
-          <div className="flex justify-between item-center p-5">
+          <div className="flex justify-between item-center ml-2">
             <p className="font-semibold text-xl text-red-600">$8.9</p>
           </div>
         </div>

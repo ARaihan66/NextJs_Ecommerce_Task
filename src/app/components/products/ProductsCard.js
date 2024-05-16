@@ -4,11 +4,11 @@ import product from "../../../../public/product.jpg";
 import { FaStar } from "react-icons/fa6";
 
 
-const ProductsCard = () => {
+const ProductsCard = ({changeDesign}) => {
 
   return (
     <div>
-      <div className="mx-10 grid grid-cols-3 gap-4">
+      {changeDesign ? (<div className="mx-10 grid grid-cols-3 gap-4">
         <div className="bg-gray-100 w-full border-2 rounded-xl">
           <Image src={product} alt="image" className="w-[100%] rounded-xl" />
           <p className="m-5 font-semibold">
@@ -31,8 +31,8 @@ const ProductsCard = () => {
             </button>
           </div>
         </div>
-      </div>
-      <div className="flex items-center bg-gray-100  border-2 rounded-xl mx-10 my-5">
+      </div>) :(
+        <div className="flex items-center bg-gray-100  border-2 rounded-xl mx-10 my-5">
         <div className="w-1/2">
           <Image
             src={product}
@@ -62,6 +62,8 @@ const ProductsCard = () => {
           </div>
         </div>
       </div>
+      ) }
+  
     </div>
   );
 };
