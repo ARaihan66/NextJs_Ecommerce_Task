@@ -1,16 +1,16 @@
 import React from "react";
-import { BsListUl, BsGrid3X3GapFill } from "react-icons/bs";
+//import { BsListUl, BsGrid3X3GapFill } from "react-icons/bs";
 
 const SearchOption = () => {
   return (
     <section className="mx-10 my-5">
-      <div className="flex justify-between my-5">
+      {/*<div className="flex justify-between my-5">
         <h3 className=" font-semibold text-2xl">All Our Products</h3>
         <div className="flex ">
           <BsGrid3X3GapFill className="cursor-pointer text-2xl" />
           <BsListUl className="mx-2 cursor-pointer text-2xl" />
         </div>
-      </div>
+      </div>*/}
       <div>
         <input
           type="search"
