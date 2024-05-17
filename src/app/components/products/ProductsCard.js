@@ -3,6 +3,7 @@ import Image from "next/image";
 import { FaStar } from "react-icons/fa";
 import { useAppDispatch } from "@/app/lib/hooks";
 import { addToCart } from "@/app/lib/features/CartSlice";
+import toast, { Toaster } from 'react-hot-toast';
 
 const ProductsCard = ({ changeDesign }) => {
   const [products, setProducts] = useState([]);
@@ -68,7 +69,7 @@ const ProductsCard = ({ changeDesign }) => {
                           image,
                           price
                         }));
-                        //handleToast(name);
+                        toast("Added to the cart")
                       }}
                       className="bg-black text-white font-semibold px-4 py-2 rounded-md"
                     >
@@ -113,7 +114,15 @@ const ProductsCard = ({ changeDesign }) => {
                     <p className="font-semibold text-xl text-red-600">
                       ${price}
                     </p>
-                    <button className="bg-black text-white font-semibold px-4 py-2 rounded-md">
+                    <button onClick={() => {
+                        dispatch(addToCart({
+                          id,
+                          title,
+                          image,
+                          price
+                        }));
+                        toast("Added to the cart")
+                      }} className="bg-black text-white font-semibold px-4 py-2 rounded-md">
                       Add to Cart
                     </button>
                   </div>
@@ -123,6 +132,7 @@ const ProductsCard = ({ changeDesign }) => {
           })}
         </>
       )}
+      <Toaster />
     </div>
   );
 };
