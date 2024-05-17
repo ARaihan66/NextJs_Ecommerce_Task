@@ -2,8 +2,11 @@
 
 import { createSlice } from "@reduxjs/toolkit";
 
-const items = localStorage.getItem("cartItems") !== null ?
+let items;
+if (typeof window !== 'undefined') {
+items = localStorage.getItem("cartItems") !== null ?
 JSON.parse(localStorage.getItem("cartItems")) : []
+}
 
 const initialState = {
   cart: items,
@@ -21,14 +24,16 @@ export const CartSlice = createSlice({
       if (existingItemIndex === -1) {
         state.cart.push(action.payload);
     
-        // Update localStorage with updated cart items
+        if (typeof window !== 'undefined') {
         localStorage.setItem("cartItems", JSON.stringify(state.cart));
+        }
       }
     }, 
     removeFromCart: (state, action) => {
       state.cart = state.cart.filter((item) => item.id !== action.payload.id);
-       // Update localStorage with updated cart items after removal
+      if (typeof window !== 'undefined') {
        localStorage.setItem("cartItems", JSON.stringify(state.cart));
+      }
     },
   },
 });
