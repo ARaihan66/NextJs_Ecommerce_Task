@@ -67,7 +67,8 @@ const ProductsCard = ({ changeDesign }) => {
                           id,
                           title,
                           image,
-                          price
+                          price,
+                          rating
                         }));
                         toast("Added to the cart")
                       }}
@@ -119,7 +120,8 @@ const ProductsCard = ({ changeDesign }) => {
                           id,
                           title,
                           image,
-                          price
+                          price,
+                          rating
                         }));
                         toast("Added to the cart")
                       }} className="bg-black text-white font-semibold px-4 py-2 rounded-md">
