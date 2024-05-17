@@ -14,22 +14,17 @@ export const CartSlice = createSlice({
   initialState,
   reducers: {
     addToCart: (state, action) => {
-      const existingItem = state.cart.find(
+      const existingItemIndex = state.cart.findIndex(
         (item) => item.id === action.payload.id
       );
-      if (existingItem) {
-        state.cart = state.cart.map((item) => {
-          return item.id === action.payload.id
-            ? { ...item }
-            : item;
-        });
-      } else {
+    
+      if (existingItemIndex === -1) {
         state.cart.push(action.payload);
+    
+        // Update localStorage with updated cart items
+        localStorage.setItem("cartItems", JSON.stringify(state.cart));
       }
-
-      // Update localStorage with updated cart items
-      localStorage.setItem("cartItems", JSON.stringify(state.cart));
-    },
+    }, 
     removeFromCart: (state, action) => {
       state.cart = state.cart.filter((item) => item.id !== action.payload.id);
        // Update localStorage with updated cart items after removal

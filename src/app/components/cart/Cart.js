@@ -14,8 +14,8 @@ const Cart = ({ children }) => {
   const cartItem = useAppSelector((state) => state.cart.cart);
 
   const totalPrice = cartItem.reduce((totalPrice, item) => {
-    return totalPrice +  item.price;
-  }, 0);
+    return (totalPrice +  item.price);
+  }, 0).toFixed(2);
 
   const dispatch = useAppDispatch();
   //console.log(cartItem);
