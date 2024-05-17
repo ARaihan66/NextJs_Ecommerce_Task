@@ -10,7 +10,9 @@ import { useAppDispatch, useAppSelector } from "@/app/lib/hooks";
 
 const Cart = ({children}) => {
 
-  const cartItem = useAppSelector((state)=> console.log(state))
+  const cartItem = useAppSelector((state)=> state.cart.cart);
+
+  console.log(cartItem);
 
   return (
     <section className="sticky top-5 border-2 border-black p-3 mt-[20px] mb-6 mr-16">
