@@ -7,11 +7,14 @@ import product from "../../../../public/product.jpg";
 import { FaStar } from "react-icons/fa6";
 import { RiDeleteBinLine } from "react-icons/ri";
 import { useAppDispatch, useAppSelector } from "@/app/lib/hooks";
+import { removeFromCart } from "@/app/lib/features/CartSlice";
+import toast, { Toaster } from 'react-hot-toast';
 
 const Cart = ({ children }) => {
   const cartItem = useAppSelector((state) => state.cart.cart);
 
-  console.log(cartItem);
+  const dispatch = useAppDispatch();
+  //console.log(cartItem);
 
   return (
     <section className="sticky top-5 border-2 border-black p-3 mt-[20px] mb-6 mr-16">
@@ -22,7 +25,7 @@ const Cart = ({ children }) => {
 
       {cartItem &&
         cartItem.map((item, i) => {
-          const { title, image, price, rating } = item;
+          const {id, title, image, price, rating } = item;
           return (
             <div
               key={i}
@@ -57,7 +60,10 @@ const Cart = ({ children }) => {
                   </div>
                   {/* Delete product button */}
                   <div className="mt-4">
-                    <RiDeleteBinLine className="text-xl text-red-500 cursor-pointer mx-2" />
+                    <RiDeleteBinLine onClick={()=>{
+                      dispatch(removeFromCart({id}));
+                      toast("Remove from the cart");
+                    }} className="text-xl text-red-500 cursor-pointer mx-2" />
                   </div>
                 </div>
                 {/* Price */}
@@ -95,6 +101,7 @@ const Cart = ({ children }) => {
             privacy policy
           </Link>
         </div>
+        <Toaster/>
       </div>
       {children}
     </section>
