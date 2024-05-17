@@ -1,11 +1,17 @@
+"use client"
+
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
 import product from "../../../../public/product.jpg";
 import { FaStar } from "react-icons/fa6";
 import { RiDeleteBinLine } from "react-icons/ri";
+import { useAppDispatch, useAppSelector } from "@/app/lib/hooks";
 
 const Cart = ({children}) => {
+
+  const cartItem = useAppSelector((state)=> console.log(state))
+
   return (
     <section className="sticky top-5 border-2 border-black p-3 mt-[20px] mb-6 mr-16">
       {/* Cart Header */}

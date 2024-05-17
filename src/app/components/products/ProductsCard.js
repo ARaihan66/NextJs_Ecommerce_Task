@@ -1,4 +1,4 @@
-"use client";
+
 
 import React, { useEffect, useState } from "react";
 import Image from "next/image";
@@ -29,12 +29,12 @@ const ProductsCard = ({ changeDesign }) => {
     <div>
       {
         products && changeDesign ? 
-        <div className="grid grid-cols-3 gap-4 mx-10 ">
+        <div className="grid grid-cols-3 gap-4 mx-10">
           {
             products.map((item,i)=>
             <div key={i} className="bg-gray-100 rounded-xl border-2">
               
-              <div className=" flex justify-center w-full h-52">
+              <div className="flex justify-center w-full h-52">
                 <img src={item.image} alt="product image" clasName="p-1 w-full h-100%"/>
               </div>
               <p className="font-semibold mt-4  ml-6">{item?.title?.slice(0,20)}...</p>
