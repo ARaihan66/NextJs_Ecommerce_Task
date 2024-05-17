@@ -27,14 +27,6 @@ export const CartSlice = createSlice({
     removeFromCart: (state, action) => {
       state.cart = state.cart.filter((item) => item.id !== action.payload.id);
     },
-
-    totalPrice: (state, action) => {
-      state.cart = state.cart.map((item) =>
-        item.id === action.payload.id
-          ? { ...item, price: item.price * item.qty }
-          : item
-      );
-    },
   },
 });
 
@@ -42,7 +34,6 @@ export const CartSlice = createSlice({
 export const {
   addToCart,
   removeFromCart,
-  totalPrice,
 } = CartSlice.actions;
 
 export default CartSlice.reducer;

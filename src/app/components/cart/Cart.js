@@ -13,6 +13,10 @@ import toast, { Toaster } from 'react-hot-toast';
 const Cart = ({ children }) => {
   const cartItem = useAppSelector((state) => state.cart.cart);
 
+  const totalPrice = cartItem.reduce((totalPrice, item) => {
+    return totalPrice +  item.price;
+  }, 0);
+
   const dispatch = useAppDispatch();
   //console.log(cartItem);
 
@@ -77,7 +81,7 @@ const Cart = ({ children }) => {
 
       {/* Total Price */}
       <p className="uppercase text-right my-5 font-semibold">
-        total price : $0
+        total price : $ {totalPrice}
       </p>
 
       {/* Terms and Conditions */}
